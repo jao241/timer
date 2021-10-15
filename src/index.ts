@@ -13,12 +13,19 @@
 class Timer{
     private _timer;
     private x = 0;
+    
     initTimer(){
         this.timer();
     }
     
     stopTimer(){
-        clearInterval(this._timer);       
+        clearInterval(this._timer);      
+        console.log("Time stoped!"); 
+    }
+
+    resetTimer(){
+        this.x = 0;
+        this.stopTimer();
     }
     
     private timer(){        
@@ -31,8 +38,9 @@ class Timer{
 const timer = new Timer();
 timer.initTimer();
 setTimeout(()=>{
-    timer.stopTimer();
+    timer.resetTimer();
 }, 5000);
+
 setTimeout(()=>{
     timer.initTimer();
 }, 6000);
