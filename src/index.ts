@@ -12,7 +12,7 @@
 
 class Timer{
     private _timer;
-    private x = 0;
+    private x:number = 0;
     
     initTimer(){
         this.timer();
@@ -30,13 +30,15 @@ class Timer{
     
     private timer(){        
         this._timer = setInterval(()=>{
-            console.log(++this.x);
+            ++this.x;
+            console.log(this.x.toString());
         }, 1000);   
     }    
 }
 
 const timer = new Timer();
 timer.initTimer();
+
 setTimeout(()=>{
     timer.resetTimer();
 }, 5000);
